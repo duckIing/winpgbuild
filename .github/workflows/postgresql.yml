@@ -144,7 +144,11 @@ jobs:
               -Duuid=ossp `
               -Db_pch=true `
               -Dgssapi=disabled `
-              -Dbuildtype=debugoptimized `
+              -Dbuildtype=release `
+              -Dblocksize=32 `
+              -Dpgport=5432  `
+              -Dwal_blocksize=32 `
+              -Dsegsize=8 `
               build
         if: ${{ fromJson(matrix.version) >= 17.0 }}
 
